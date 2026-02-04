@@ -1,9 +1,11 @@
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api"
+
 export default function AddEvent({ onClose, onAdd }) {
   const [title, setTitle] = useState("")
   const [date, setDate] = useState("")
 
   async function handleAdd() {
-    const res = await fetch("http://localhost:5000/api/events", {
+    const res = await fetch(`${API_BASE}/events`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Calendar, Clock, Bot, Sparkles, CheckCircle, Bell, Target, TrendingUp, ChevronRight, Plus, Zap, Flame, Award, Sun, Moon, Coffee, CalendarDays, ListTodo, Brain, Send, ArrowUp, ArrowRight, ArrowDown, CheckCircle2, Circle, Star, Activity, BarChart3, Salad, X } from "lucide-react"
 import { Link } from "react-router-dom"
 
-const API_BASE = "http://localhost:5000/api"
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api"
 
 const greetings = {
   morning: { text: "Good Morning", icon: Coffee, emoji: "☀️" },

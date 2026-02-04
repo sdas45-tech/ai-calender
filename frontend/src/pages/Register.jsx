@@ -1,13 +1,15 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api"
+
 export default function Register() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
 
   async function handleRegister() {
-    const res = await fetch("http://localhost:5000/api/auth/register", {
+    const res = await fetch(`${API_BASE}/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password })

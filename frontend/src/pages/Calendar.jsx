@@ -5,7 +5,7 @@ import timeGridPlugin from "@fullcalendar/timegrid"
 import interactionPlugin from "@fullcalendar/interaction"
 import { Plus, X, Clock, MapPin, FileText, Trash2, Edit2, AlertCircle, Sparkles, Eye, EyeOff, Zap, Calendar, Share2, FileCheck, Brain, ChevronLeft, ChevronRight, CalendarDays, Timer, Tag, Bell, Users, Video, Coffee, Briefcase, Heart, PartyPopper, MoreHorizontal, CheckCircle2, Send, ArrowUp, ArrowRight, ArrowDown } from "lucide-react"
 
-const API_BASE = "http://localhost:5000/api"
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api"
 
 const priorityConfig = {
   low: { bg: "#22c55e", border: "#16a34a", gradient: "from-green-500 to-emerald-500", icon: ArrowDown },

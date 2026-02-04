@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Mic, MicOff, Loader2, X, Bot, Send } from "lucide-react"
 
-const API_BASE = "http://localhost:5000/api"
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api"
 
 export default function Topbar() {
   const [isListening, setIsListening] = useState(false)

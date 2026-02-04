@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Plus, Bell, Clock, Trash2, Edit2, ToggleLeft, ToggleRight, Pill, Droplet, Moon, Dumbbell, BellRing, BellOff, Calendar, Repeat, ChevronRight, Sparkles, Volume2, VolumeX, CheckCircle2, AlertCircle, X, Search, Filter, SortAsc } from "lucide-react"
 
-const API_BASE = "http://localhost:5000/api"
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api"
 
 const reminderTypes = {
   medicine: { icon: Pill, label: "Medicine", gradient: "from-red-500 to-pink-500", bg: "bg-red-500/10", border: "border-red-500/30", text: "text-red-400" },

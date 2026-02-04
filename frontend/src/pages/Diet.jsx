@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Plus, Droplet, Apple, Coffee, Sun, Moon, Sparkles, Trash2, TrendingUp, Target, Send, ChevronDown, ChevronUp, Flame, Beef, Wheat, Droplets, UtensilsCrossed, Clock, Bot, X, Edit2, Scale, Activity, Heart, Salad, Pizza, Sandwich, Cookie, GlassWater, BarChart3, Calendar, CheckCircle2, AlertCircle, Lightbulb } from "lucide-react"
 
-const API_BASE = "http://localhost:5000/api"
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api"
 
 const mealTypes = {
   breakfast: { icon: Coffee, label: "Breakfast", gradient: "from-orange-500 to-amber-500", bg: "bg-orange-500/10", border: "border-orange-500/30", time: "7:00 - 10:00 AM" },

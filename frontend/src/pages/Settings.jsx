@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { User, Lock, LogOut, Clock, Bell, Bot, Target, Palette, Shield, Download, Trash2, Save, ChevronRight, Moon, Sun, Sparkles, Globe, Volume2, VolumeX, Zap, Check, AlertTriangle } from "lucide-react"
 
-const API_BASE = "http://localhost:5000/api"
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api"
 
 const themeColors = [
   { name: "purple", primary: "from-purple-500 to-violet-600", bg: "bg-purple-500" },

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Plus, CheckCircle, Clock, Trash2, Edit2, Filter, Search, X, Sparkles, Calendar, Flag, Tag, ListTodo, CheckCircle2, Circle, AlertCircle, TrendingUp, Zap, Grid3X3, List, ChevronDown, MoreVertical, Star, ArrowUp, ArrowRight, ArrowDown } from "lucide-react"
 
-const API_BASE = "http://localhost:5000/api"
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api"
 
 const priorityConfig = {
   high: { label: "High", icon: ArrowUp, gradient: "from-red-500 to-rose-500", bg: "bg-red-500/10", border: "border-red-500/30", text: "text-red-400" },

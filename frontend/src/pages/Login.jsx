@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { Mail, Lock, User, Eye, EyeOff, Sparkles, ArrowRight, Loader2 } from "lucide-react"
 
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api"
+
 export default function Login({ onLogin }) {
   const [isRegister, setIsRegister] = useState(false)
   const [name, setName] = useState("")
@@ -27,7 +29,7 @@ export default function Login({ onLogin }) {
       const endpoint = isRegister ? "register" : "login"
       const body = isRegister ? { name, email, password } : { email, password }
 
-      const res = await fetch(`http://localhost:5000/api/auth/${endpoint}`, {
+      const res = await fetch(`${API_BASE}/auth/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body)

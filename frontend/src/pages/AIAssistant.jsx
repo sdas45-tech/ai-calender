@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { Send, Sparkles, Calendar, Dumbbell, ListTodo, Lightbulb, Bot, User, CheckCircle2, XCircle, Clock, Mic, MicOff, Wand2, Brain, Zap, MessageSquare, ChevronDown, Volume2, Copy, RefreshCw, MoreHorizontal, Star, ArrowRight } from "lucide-react"
 
-const API_BASE = "http://localhost:5000/api"
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api"
 
 export default function AIAssistant() {
   const [userInput, setUserInput] = useState("")

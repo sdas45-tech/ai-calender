@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Plus, Target, Flame, Trophy, Calendar, Trash2, Edit2, Check, X, Sparkles, TrendingUp, Award, Zap, Clock, CheckCircle2, Star, BarChart3, ChevronRight, Search, Filter, Grid3X3, List, Repeat, CalendarDays } from "lucide-react"
 
-const API_BASE = "http://localhost:5000/api"
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api"
 
 const habitIcons = ["💪", "📚", "🧘", "💧", "🏃", "🎯", "💤", "🥗", "✍️", "🎨", "🎵", "💻", "🧠", "❤️", "🌱", "🔥", "⭐", "🌟", "🚀", "💎"]
 
