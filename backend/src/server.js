@@ -19,7 +19,31 @@ connectDB()
 
 const app = express()
 
-app.use(cors())
+// CORS configuration for production
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  process.env.FRONTEND_URL
+].filter(Boolean)
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (mobile apps, curl, etc.)
+    if (!origin) return callback(null, true)
+    
+    if (allowedOrigins.some(allowed => origin.startsWith(allowed.replace(/\/$/, '')) || allowed.includes('vercel.app') && origin.includes('vercel.app'))) {
+      return callback(null, true)
+    }
+    
+    // Allow all vercel.app subdomains
+    if (origin.includes('vercel.app')) {
+      return callback(null, true)
+    }
+    
+    callback(null, true) // Allow all for now, tighten in production
+  },
+  credentials: true
+}))
 app.use(express.json())
 
 // Routes
